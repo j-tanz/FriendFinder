@@ -1,15 +1,221 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Survey</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.5.1/chosen.jquery.min.js"></script>
 
 </head>
+
 <body>
+    <div class="container">
+        <h2> Investor Survey Questions</h2>
+        <hr />
+        <h3>
+            <strong>About You</strong>
+        </h3>
+        <h4>Name (Required)</h4>
+        <input class="form-control" id="name" required="" type="text" />
+        <hr />
+        <h4>
+            <strong>Question 1</strong>
+        </h4>
+        <h5>
+            My current age is: 
+        </h5>
+        <select class="chosen-container chosen-container-single" id="q1" style="width: 75%">
+            <option value=""></option>
+            <option value="5"> < 30 </option>
+            <option value="4">31-40</option>
+            <option value="3">41-50</option>
+            <option value="2">51-60</option>
+            <option value="1">60 +</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <h4>
+            <strong>Question 2</strong>
+        </h4>
+        <h5>
+            I possess a high level of knowledge regarding economic issues and investments.
+        </h5>
+        <select class="chosen-container chosen-container-single" id="q2" style="width: 75%">
+            <option value=""></option>
+            <option value="5">Strongly Agree</option>
+            <option value="4">Agree</option>
+            <option value="3">Neutral</option>
+            <option value="2">Disagree</option>
+            <option value="1">Strongly Disagree</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <h4>
+            <strong>Question 3</strong>
+        </h4>
+        <h5>
+            When making long-term investments, I would likely need access to these funds at some before my retirement.
+        </h5>
+        <select class="chosen-container chosen-container-single" id="q3" style="width: 75%">
+            <option value=""></option>
+            <option value="1">Strongly Agree</option>
+            <option value="2">Agree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Disagree</option>
+            <option value="5">Strongly Disagree</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <h4>
+            <strong>Question 4</strong>
+        </h4>
+        <h5>
+            If the market as a whole were to drop 15% overnight, I would probably be inclined to:
+        </h5>
+        <select class="chosen-container chosen-container-single" id="q4" style="width: 75%">
+            <option value=""></option>
+            <option value="1">Sell all of the riskier investments and look for safer alternatives</option>
+            <option value="2">Sell off a portion of the worst performers in favor of more secure alternatives</option>
+            <option value="3">Hold and do nothing; adopt a wait and see approach</option>
+            <option value="4">Cautiously buy in</option>
+            <option value="5">Greatly enhance my positions by purchasing a much larger stake in my holdings</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <h4>
+            <strong>Question 5</strong>
+        </h4>
+        <h5>
+            Generally speaking, protecting my savings from taking a large loss is more important than seeking out a higher ROI.
+        </h5>
+        <select class="chosen-container chosen-container-single" id="q5" style="width: 75%">
+            <option value=""></option>
+            <option value="1">Strongly Agree</option>
+            <option value="2">Agree</option>
+            <option value="3">Neutral</option>
+            <option value="4">Disagree</option>
+            <option value="5">Strongly Disagree</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <h4>
+            <strong>Question 6</strong>
+        </h4>
+        <h5>
+            My primary sources of income are likely to:
+        </h5>
+        <select class="chosen-container chosen-container-single" id="q6" style="width: 75%">
+            <option value=""></option>
+            <option value="5">Remain highly secure and stable</option>
+            <option value="4">Remain secure</option>
+            <option value="3">Uncertain</option>
+            <option value="2">Fluctuate at bit</option>
+            <option value="1">Be highly unstable</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <h4>
+            <strong>Question 7</strong>
+        </h4>
+        <h5>
+            My comfort level with volatile investments is 
+        </h5>
+        <select class="chosen-container chosen-container-single" id="q7" style="width: 75%">
+            <option value=""></option>
+            <option value="1">minimal; I greatly prefer consistent positive returns</option>
+            <option value="2">low; I could risk an occasional rare negative return</option>
+            <option value="3">medium; I would prefer a balanced approach to risk vs reward</option>
+            <option value="4">elevated; I would prefer to seek a higher return over a long period of time, and can handle a large short-term loss</option>
+            <option value="5">high; I would prefer to seek the highest possible ROI over and long period, and can accept incurring large losses </option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <h4>
+            <strong>Question 8</strong>
+        </h4>
+        <h5>
+            I have been actively investing in the stock market for
+        </h5>
+        </h5>
+        </h5>
+        <select class="chosen-container chosen-container-single" id="q8" style="width: 75%">
+            <option value=""></option>
+            <option value="1">zero years; I have never invested in stocks before</option>
+            <option value="2">less than 1 year</option>
+            <option value="3">between 1 and 3 years</option>
+            <option value="4">between 3 and 10 years</option>
+            <option value="5">10 years or more.</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <h4>
+            <strong>Question 9</strong>
+        </h4>
+        <h5>
+            With regards to my finances, I would describe myself as:
+        </h5>
+        <select class="chosen-container chosen-container-single" id="q9" style="width: 75%">
+            <option value=""></option>
+            <option value="1">Conservative</option>
+            <option value="2">Moderately Conservative</option>
+            <option value="3">Moderate</option>
+            <option value="4">Somewhat aggressive</option>
+            <option value="5">Highly aggressive</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <h4>
+            <strong>Question 10</strong>
+        </h4>
+        <h5>
+            I feel highly comfortable investing in international assets.
+        </h5>
+        <select class="chosen-container chosen-container-single" id="q1" style="width: 75%">
+            <option value=""></option>
+            <option value="5">Strongly Agree</option>
+            <option value="4">Agree</option>
+            <option value="3">Neutral</option>
+            <option value="2">Disagree</option>
+            <option value="1">Strongly Disagree</option>
+        </select>
+        <br>
+        <br>
+        <br>
+        <br>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" style="width: 75%"><i class="fa fa-check-circle" aria-hidden="true"></i>
+            Submit
+        </button>
+        <br>
+        <br>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="container-fluid footer" style="position: fixed; bottom:  0px; height: 60px; background-color:rgb(214, 214, 214); width: 100%; text-align: center;">
+        <br>
+        <p>
+            THIS SURVEY IS INTENDED FOR ENTERTAINMENT PURPOSES ONLY.  Seek the advice of a qualified professional before making any financial decisions.
+        </p>
+        <br>
+    </div>
+    <script type="text/javascript">
     
+    
+    </script>
 </body>
 </html>
