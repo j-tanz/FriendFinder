@@ -1,11 +1,16 @@
 var stockData = require("../data/friends")
 
-
-app.get("/api/stocks", function(req, res) {
-    res.json(stockData);
-});
+module.exports = function (app) {
 
 
-app.post("/api/stocks", function(req, res){
+    app.get("/api/invest", function (req, res) {
+        res.json(stockData);
+    });
 
-});
+
+    app.post("/api/invest", function (req, res) {
+        stockData.push(req.body);
+        res.json(true);
+
+    });
+};

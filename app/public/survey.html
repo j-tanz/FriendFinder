@@ -135,7 +135,7 @@
         <select class="chosen-container chosen-container-single" id="q7" style="width: 75%">
             <option value=""></option>
             <option value="1">minimal; I greatly prefer consistent positive returns</option>
-            <option value="2">low; I could risk an occasional rare negative return</option>
+            <option value="2">low; I could risk the rare negative return</option>
             <option value="3">medium; I would prefer a balanced approach to risk vs reward</option>
             <option value="4">elevated; I would prefer to seek a higher return over a long period of time, and can handle a large short-term loss</option>
             <option value="5">high; I would prefer to seek the highest possible ROI over and long period, and can accept incurring large losses </option>
@@ -185,7 +185,7 @@
         <h5>
             I feel highly comfortable investing in international assets.
         </h5>
-        <select class="chosen-container chosen-container-single" id="q1" style="width: 75%">
+        <select class="chosen-container chosen-container-single" id="q10" style="width: 75%">
             <option value=""></option>
             <option value="5">Strongly Agree</option>
             <option value="4">Agree</option>
@@ -213,8 +213,52 @@
         </p>
         <br>
     </div>
+
+<div class="modal fade" id="results-modal" role="dialog" style="display: none;">
+    <div class="modal-dialog">
+
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" type="button" data-dismiss="modal">×</button>
+          <h2 class="modal-title"><strong>Best Match</strong></h2>
+        </div>
+        <div class="modal-body">
+          <h2 id="match-name"></h2>
+          <img id="match-img" alt="">
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
     <script type="text/javascript">
     
+    $("#submit").on("click", function(event){
+        event.preventDefault();
+
+        var userData = {
+            name: $("#name").val(),
+            scoreData: [
+                $("#q1").val(),
+                $("#q2").val(),
+                $("#q3").val(),
+                $("#q4").val(),
+                $("#q5").val(),
+                $("#q6").val(),
+                $("#q7").val(),
+                $("#q8").val(),
+                $("#q9").val(),
+                $("#q10").val()
+            ]
+        };
+        console.log('userData: ', userData);
+        $.post("/api/invest"), userData, function(data) {
+            
+        }
+    })
     
     </script>
 </body>
