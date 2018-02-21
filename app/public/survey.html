@@ -209,7 +209,7 @@
     <div class="container-fluid footer" style="position: fixed; bottom:  0px; height: 60px; background-color:rgb(214, 214, 214); width: 100%; text-align: center;">
         <br>
         <p>
-            THIS SURVEY IS INTENDED FOR ENTERTAINMENT PURPOSES ONLY.  Seek the advice of a qualified professional before making any financial decisions.
+            THIS SURVEY IS INTENDED FOR ENTERTAINMENT PURPOSES ONLY.  Seek the advice of a qualified professional before making any financial decisions!
         </p>
         <br>
     </div>
@@ -254,11 +254,11 @@
                 $("#q10").val()
             ]
         };
-        console.log('userData: ', userData);
-        $.post("/api/invest"), userData, function(data) {
-            
-        }
-    })
+        // console.log('userData: ', userData);
+        $.post("/api/invest", userData, function(data) {
+            console.log('data', data);
+        });
+    });
     
     </script>
 </body>

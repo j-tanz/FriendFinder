@@ -1,16 +1,15 @@
-var stockData = require("../data/friends")
+var investStrats = require("../data/friends")
 
 module.exports = function (app) {
 
 
     app.get("/api/invest", function (req, res) {
-        res.json(stockData);
+        res.json(investStrats);
+        console.log('res: ', res);
     });
 
-
     app.post("/api/invest", function (req, res) {
-        stockData.push(req.body);
-        res.json(true);
-
+        var newSurvey = req.body['scoreData[]'];
+        console.log('newSurvey: ', newSurvey);
     });
 };

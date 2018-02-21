@@ -84,4 +84,7 @@ var investArray = [
             4
         ]
     }
-]
+];
+
+
+module.exports = investArray;
