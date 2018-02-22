@@ -28,7 +28,6 @@ module.exports = function (app) {
                 outcome = i;
             }
         }
-        console.log(investStrats[outcome]);
         res.json(investStrats[outcome]);
     });
 }

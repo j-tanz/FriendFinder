@@ -261,14 +261,11 @@
                     $("#q10").val()
                 ]
             };
-            // console.log('userData: ', userData);
+
             $.post("/api/invest", userData, function (data) {
-                
                 $("#match-strat").text(data.investType);
                 $("#match-img").attr("src", data.photo);
                 $("#results-modal").modal("toggle");
-                console.log(data.investType);
-                console.log(data.photo);
             });
         });
 
