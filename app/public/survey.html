@@ -30,7 +30,7 @@
         <h5>
             My current age is:
         </h5>
-        <select class="chosen-container chosen-container-single" id="q1" style="width: 75%">
+        <select class="chosen-container chosen-container-single form-control" id="q1" style="width: 75%">
             <option value=""></option>
             <option value="5"> < 30 </option>
             <option value="4">31-40</option>
@@ -47,7 +47,7 @@
         <h5>
             I possess a high level of knowledge regarding economic issues and investments.
         </h5>
-        <select class="chosen-container chosen-container-single" id="q2" style="width: 75%">
+        <select class="chosen-container chosen-container-single form-control" id="q2" style="width: 75%">
             <option value=""></option>
             <option value="5">Strongly Agree</option>
             <option value="4">Agree</option>
@@ -64,7 +64,7 @@
         <h5>
             When making long-term investments, I would likely need access to these funds at some before my retirement.
         </h5>
-        <select class="chosen-container chosen-container-single" id="q3" style="width: 75%">
+        <select class="chosen-container chosen-container-single form-control" id="q3" style="width: 75%">
             <option value=""></option>
             <option value="1">Strongly Agree</option>
             <option value="2">Agree</option>
@@ -81,7 +81,7 @@
         <h5>
             If the market as a whole were to drop 15% overnight, I would probably be inclined to:
         </h5>
-        <select class="chosen-container chosen-container-single" id="q4" style="width: 75%">
+        <select class="chosen-container chosen-container-single form-control" id="q4" style="width: 75%">
             <option value=""></option>
             <option value="1">Sell all of the riskier investments and look for safer alternatives</option>
             <option value="2">Sell off a portion of the worst performers in favor of more secure alternatives</option>
@@ -98,7 +98,7 @@
         <h5>
             Generally speaking, protecting my savings from taking a large loss is more important than seeking out a higher ROI.
         </h5>
-        <select class="chosen-container chosen-container-single" id="q5" style="width: 75%">
+        <select class="chosen-container chosen-container-single form-control" id="q5" style="width: 75%">
             <option value=""></option>
             <option value="1">Strongly Agree</option>
             <option value="2">Agree</option>
@@ -115,7 +115,7 @@
         <h5>
             My primary sources of income are likely to:
         </h5>
-        <select class="chosen-container chosen-container-single" id="q6" style="width: 75%">
+        <select class="chosen-container chosen-container-single form-control" id="q6" style="width: 75%">
             <option value=""></option>
             <option value="5">Remain highly secure and stable</option>
             <option value="4">Remain secure</option>
@@ -132,7 +132,7 @@
         <h5>
             My comfort level with volatile investments is
         </h5>
-        <select class="chosen-container chosen-container-single" id="q7" style="width: 75%">
+        <select class="chosen-container chosen-container-single form-control" id="q7" style="width: 75%">
             <option value=""></option>
             <option value="1">minimal; I greatly prefer consistent positive returns</option>
             <option value="2">low; I could risk the rare negative return</option>
@@ -153,7 +153,7 @@
         </h5>
         </h5>
         </h5>
-        <select class="chosen-container chosen-container-single" id="q8" style="width: 75%">
+        <select class="chosen-container chosen-container-single form-control" id="q8" style="width: 75%">
             <option value=""></option>
             <option value="1">zero years; I have never invested in stocks before</option>
             <option value="2">less than 1 year</option>
@@ -170,7 +170,7 @@
         <h5>
             With regards to my finances, I would describe myself as:
         </h5>
-        <select class="chosen-container chosen-container-single" id="q9" style="width: 75%">
+        <select class="chosen-container chosen-container-single form-control" id="q9" style="width: 75%">
             <option value=""></option>
             <option value="1">Conservative</option>
             <option value="2">Moderately Conservative</option>
@@ -187,7 +187,7 @@
         <h5>
             I feel highly comfortable investing in international assets.
         </h5>
-        <select class="chosen-container chosen-container-single" id="q10" style="width: 75%">
+        <select class="chosen-container chosen-container-single form-control" id="q10" style="width: 75%">
             <option value=""></option>
             <option value="5">Strongly Agree</option>
             <option value="4">Agree</option>
@@ -240,11 +240,22 @@
         </div>
     </div>
 
-
     <script type="text/javascript">
 
         $("#submit").on("click", function (event) {
             event.preventDefault();
+
+            function validateForm() {
+                var isValid = true;
+                $(".form-control").each(function() {
+                if ($(this).val() === "") {
+                isValid = false;
+                }
+            });
+        return isValid;
+        console.log('isValid: ', isValid);
+        }
+        if (validateForm()) {
 
             var userData = {
                 name: $("#name").val(),
@@ -266,9 +277,11 @@
                 $("#match-strat").text(data.investType);
                 $("#match-img").attr("src", data.photo);
                 $("#results-modal").modal("toggle");
-            });
+                });
+            } else {
+                alert("All fields are required.  Please try again.");
+            }
         });
-
     </script>
 </body>
 
