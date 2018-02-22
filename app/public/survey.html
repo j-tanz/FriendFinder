@@ -28,7 +28,7 @@
             <strong>Question 1</strong>
         </h4>
         <h5>
-            My current age is: 
+            My current age is:
         </h5>
         <select class="chosen-container chosen-container-single" id="q1" style="width: 75%">
             <option value=""></option>
@@ -130,15 +130,17 @@
             <strong>Question 7</strong>
         </h4>
         <h5>
-            My comfort level with volatile investments is 
+            My comfort level with volatile investments is
         </h5>
         <select class="chosen-container chosen-container-single" id="q7" style="width: 75%">
             <option value=""></option>
             <option value="1">minimal; I greatly prefer consistent positive returns</option>
             <option value="2">low; I could risk the rare negative return</option>
             <option value="3">medium; I would prefer a balanced approach to risk vs reward</option>
-            <option value="4">elevated; I would prefer to seek a higher return over a long period of time, and can handle a large short-term loss</option>
-            <option value="5">high; I would prefer to seek the highest possible ROI over and long period, and can accept incurring large losses </option>
+            <option value="4">elevated; I would prefer to seek a higher return over a long period of time, and can handle a large short-term
+                loss</option>
+            <option value="5">high; I would prefer to seek the highest possible ROI over and long period, and can accept incurring large losses
+                </option>
         </select>
         <br>
         <br>
@@ -197,7 +199,8 @@
         <br>
         <br>
         <br>
-        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" style="width: 75%"><i class="fa fa-check-circle" aria-hidden="true"></i>
+        <button type="submit" class="btn btn-primary btn-lg btn-block" id="submit" style="width: 75%">
+            <i class="fa fa-check-circle" aria-hidden="true"></i>
             Submit
         </button>
         <br>
@@ -209,57 +212,67 @@
     <div class="container-fluid footer" style="position: fixed; bottom:  0px; height: 60px; background-color:rgb(214, 214, 214); width: 100%; text-align: center;">
         <br>
         <p>
-            THIS SURVEY IS INTENDED FOR ENTERTAINMENT PURPOSES ONLY.  Seek the advice of a qualified professional before making any financial decisions!
+            THIS SURVEY IS INTENDED FOR ENTERTAINMENT PURPOSES ONLY. Seek the advice of a qualified professional before making any financial
+            decisions!
         </p>
         <br>
     </div>
 
-<div class="modal fade" id="results-modal" role="dialog" style="display: none;">
-    <div class="modal-dialog">
+    <div class="modal fade" id="results-modal" role="dialog" style="display: none;">
+        <div class="modal-dialog">
 
-      <div class="modal-content">
-        <div class="modal-header">
-          <button class="close" type="button" data-dismiss="modal">×</button>
-          <h2 class="modal-title"><strong>Best Match</strong></h2>
-        </div>
-        <div class="modal-body">
-          <h2 id="match-name"></h2>
-          <img id="match-img" alt="">
-        </div>
-        <div class="modal-footer">
-          <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
-        </div>
-      </div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="close" type="button" data-dismiss="modal">×</button>
+                    <h2 class="modal-title">
+                        <strong>Your Recommended Investment Strategy:</strong>
+                    </h2>
+                </div>
+                <div class="modal-body">
+                    <h2 id="match-strat"></h2>
+                    <img id="match-img" alt="">
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-default" type="button" data-dismiss="modal">Close</button>
+                </div>
+            </div>
 
+        </div>
     </div>
-  </div>
+
 
     <script type="text/javascript">
-    
-    $("#submit").on("click", function(event){
-        event.preventDefault();
 
-        var userData = {
-            name: $("#name").val(),
-            scoreData: [
-                $("#q1").val(),
-                $("#q2").val(),
-                $("#q3").val(),
-                $("#q4").val(),
-                $("#q5").val(),
-                $("#q6").val(),
-                $("#q7").val(),
-                $("#q8").val(),
-                $("#q9").val(),
-                $("#q10").val()
-            ]
-        };
-        // console.log('userData: ', userData);
-        $.post("/api/invest", userData, function(data) {
-            console.log('data', data);
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+
+            var userData = {
+                name: $("#name").val(),
+                scoreData: [
+                    $("#q1").val(),
+                    $("#q2").val(),
+                    $("#q3").val(),
+                    $("#q4").val(),
+                    $("#q5").val(),
+                    $("#q6").val(),
+                    $("#q7").val(),
+                    $("#q8").val(),
+                    $("#q9").val(),
+                    $("#q10").val()
+                ]
+            };
+            // console.log('userData: ', userData);
+            $.post("/api/invest", userData, function (data) {
+                
+                $("#match-strat").text(data.investType);
+                $("#match-img").attr("src", data.photo);
+                $("#results-modal").modal("toggle");
+                console.log(data.investType);
+                console.log(data.photo);
+            });
         });
-    });
-    
+
     </script>
 </body>
+
 </html>
