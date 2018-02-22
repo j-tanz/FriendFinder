@@ -1,45 +1,45 @@
 var investArray = [
     {
         // 18
-        investType: "ultra-conservative",
-        photo: "/app/data/images/ultraconservative.png",
+        investType: "Ultra-Conservative",
+        photo: "/images/ultraconservative.png",
         scores:[
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
-            2,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
             1,
             1
         ]
     },
     {
         // 25
-        investType: "conservative",
-        photo: "/app/data/images/conservative.png",
+        investType: "Conservative",
+        photo: "/images/conservative.png",
         scores:[
             2,
             2,
             2,
-            3,
-            3,
-            3,
-            3,
-            3,
+            2,
+            2,
+            2,
+            2,
+            2,
             2,
             2
         ]
     },
     {
         // 32
-        investType: "balanced",
-        photo: "/app/data/images/balanced.png",
+        investType: "Balanced",
+        photo: "/images/balanced.png",
         scores:[
-            4,
-            4,
+            3,
+            3,
             3,
             3,
             3,
@@ -52,8 +52,8 @@ var investArray = [
     },
     {
         // 39
-        investType: "medium-agressive",
-        photo: "/app/data/images/mediumagressive.png",
+        investType: "Medium-Agressive",
+        photo: "/images/mediumagressive.png",
         scores:[
             4,
             4,
@@ -61,27 +61,27 @@ var investArray = [
             4,
             4,
             4,
-            4,
-            4,
-            4,
-            3
-        ]
-    },
-    {
-        // 46
-        investType: "hyper-agressive",
-        photo: "/app/data/images/hyperagressive.png",
-        scores:[
-            5,
-            5,
-            5,
-            5,
-            5,
-            5,
             4,
             4,
             4,
             4
+        ]
+    },
+    {
+        // 46
+        investType: "Hyper-Agressive",
+        photo: "/images/hyperagressive.png",
+        scores:[
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5,
+            5
         ]
     }
 ];
