@@ -4,7 +4,7 @@
 
 ## [Asset Match](https://friendly-invest-finder.herokuapp.com/)
 
-#### This app was built for entertainment purposes only as a "proof-of-concept" design.  The advice generated should **NOT** be followed without consulting a qualified professional!
+#### This simple survey application was built for entertainment purposes only as a "proof-of-concept" design.  The advice generated should **NOT** be followed without consulting a qualified professional!
 
 #### Author: John Tansor
 ##### Date: Feb 2018
