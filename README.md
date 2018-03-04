@@ -2,7 +2,7 @@
 
 ### Welcome to my portfolio/asset matching web application!
 
-## [Investor Survey](https://friendly-invest-finder.herokuapp.com/)
+## [Portfolio Investment Helper](https://friendly-invest-finder.herokuapp.com/)
 
 #### This simple survey application was built for entertainment purposes only as a "proof-of-concept" design.  The advice generated should **NOT** be utilized without consulting a qualified professional!
 
