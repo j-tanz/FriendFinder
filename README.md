@@ -1,8 +1,8 @@
-# "Asset Match" (aka "Friendly Investment Advice Finder")
+# Portfolio-Survey
 
-### Welcome to my asset match web application!
+### Welcome to my portfolio/asset matching web application!
 
-## [Asset Match](https://friendly-invest-finder.herokuapp.com/)
+## [Investor Survey](https://friendly-invest-finder.herokuapp.com/)
 
 #### This simple survey application was built for entertainment purposes only as a "proof-of-concept" design.  The advice generated should **NOT** be utilized without consulting a qualified professional!
 
